@@ -1,0 +1,116 @@
+<div class="skills-container">
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="skills-hero">
+      <h1 class="skills-title">My Skills & Technologies</h1>
+      <p class="skills-subtitle">A comprehensive overview of my technical expertise and proficiency levels</p>
+    </section>
+
+    <!-- Skills Filter -->
+    <section class="skills-filter">
+      <div class="filter-buttons">
+        <button 
+          class="filter-btn"
+          [class.active]="selectedFilter() === 'All'"
+          (click)="setFilter('All')">
+          All Skills
+        </button>
+        <button 
+          class="filter-btn"
+          [class.active]="selectedFilter() === 'Frontend'"
+          (click)="setFilter('Frontend')">
+          Frontend
+        </button>
+        <button 
+          class="filter-btn"
+          [class.active]="selectedFilter() === 'Backend'"
+          (click)="setFilter('Backend')">
+          Backend
+        </button>
+        <button 
+          class="filter-btn"
+          [class.active]="selectedFilter() === 'Language'"
+          (click)="setFilter('Language')">
+          Languages
+        </button>
+        <button 
+          class="filter-btn"
+          [class.active]="selectedFilter() === 'Database'"
+          (click)="setFilter('Database')">
+          Database
+        </button>
+        <button 
+          class="filter-btn"
+          [class.active]="selectedFilter() === 'Tools'"
+          (click)="setFilter('Tools')">
+          Tools
+        </button>
+      </div>
+    </section>
+
+    <!-- Skills Grid -->
+    <section class="skills-grid-section">
+      <div class="skills-grid" *ngIf="filteredSkills().length > 0">
+        <div 
+          class="skill-card"
+          *ngFor="let skill of filteredSkills(); trackBy: trackBySkill"
+          [attr.data-category]="skill.category"
+          (click)="onSkillClick(skill)">
+          
+          <div class="skill-header">
+            <div class="skill-icon" [style.background-color]="skill.color">
+              <i [class]="getSkillIcon(skill)"></i>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">{{ skill.name }}</h3>
+              <span class="skill-category">{{ skill.category }}</span>
+            </div>
+          </div>
+
+          <div class="skill-body">
+            <div class="proficiency-section">
+              <span class="proficiency-label">Proficiency:</span>
+              <div class="proficiency-bar">
+                <div 
+                  class="proficiency-fill"
+                  [style.width]="getProficiencyWidth(skill.proficiency) + '%'"
+                  [attr.data-level]="skill.proficiency"
+                  [attr.data-proficiency]="skill.proficiency">
+                </div>
+              </div>
+              <span class="proficiency-text">{{ skill.proficiency }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- No Results Message -->
+      <div class="no-results" *ngIf="filteredSkills().length === 0">
+        <p>No skills found for the selected category.</p>
+      </div>
+    </section>
+
+    <!-- Future Skills Section -->
+    <section class="future-skills">
+      <h2 class="future-title">Learning Roadmap</h2>
+      <p class="future-subtitle">Technologies I'm planning to learn and explore</p>
+      
+      <div class="future-grid">
+        <div class="future-item" 
+             *ngFor="let skill of futureSkills; trackBy: trackByFutureSkill"
+             (click)="onFutureSkillClick(skill)">
+          <div class="future-icon"><i [class]="skill.icon"></i></div>
+          <h4 class="future-name">{{ skill.name }}</h4>
+          <span class="future-category">{{ skill.category }}</span>
+        </div>
+        
+        <!-- Placeholder for more skills -->
+        <div class="future-item placeholder">
+          <div class="future-icon"><i class="fas fa-plus-circle"></i></div>
+          <h4 class="future-name">More Skills</h4>
+          <span class="future-category">Coming Soon</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

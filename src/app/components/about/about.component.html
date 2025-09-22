@@ -1,0 +1,186 @@
+<div class="about-container">
+  <div class="about-content">
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="hero-grid">
+        <div class="hero-image">
+          <div class="image-container">
+            <div class="profile-image" *ngIf="personalInfo.profileImage">
+              <img 
+                [src]="personalInfo.profileImage" 
+                [alt]="personalInfo.name"
+                class="profile-photo">
+            </div>
+            <div class="profile-image profile-fallback" *ngIf="!personalInfo.profileImage">
+              <span class="profile-initial">{{ getInitials() }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-text">
+          <h1 class="about-title">About Me</h1>
+          <h2 class="about-subtitle">{{ personalInfo.title }}</h2>
+          <p class="about-description">{{ personalInfo.bio }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="details-section">
+      <div class="details-grid">
+        <!-- Background -->
+        <div class="detail-card">
+          <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="card-content">
+            <div>
+              <h3>Background</h3>
+              <p>
+                Passionate about creating efficient, scalable applications and exploring cutting-edge technologies. 
+                I enjoy solving complex problems and building solutions that make a real impact.
+              </p>
+            </div>
+            <div class="highlight-list">
+              <div class="highlight-item">
+                <span class="highlight-icon"><i class="fas fa-book"></i></span>
+                <span>Continuous learner</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon"><i class="fas fa-rocket"></i></span>
+                <span>Innovation focused</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-icon"><i class="fas fa-handshake"></i></span>
+                <span>Collaborative team player</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="detail-card">
+          <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="card-content">
+            <div>
+              <h3>Experience</h3>
+              <p>
+                Developing modern web applications with focus on performance, user experience, 
+                and maintainable code architecture.
+              </p>
+            </div>
+            <div class="experience-list">
+              <div class="experience-item">
+                <div class="experience-period">Present</div>
+                <div class="experience-details">
+                  <h4>Full Stack Development</h4>
+                  <p>Building applications with modern frameworks and backend systems</p>
+                </div>
+              </div>
+              <div class="experience-item">
+                <div class="experience-period">Learning</div>
+                <div class="experience-details">
+                  <h4>Systems Programming</h4>
+                  <p>Exploring Rust and low-level programming concepts</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="detail-card">
+          <div class="card-icon"><i class="fas fa-bolt"></i></div>
+          <div class="card-content">
+            <div>
+              <h3>What Drives Me</h3>
+              <p>
+                I'm passionate about technology's potential to solve real-world problems 
+                and create meaningful user experiences.
+              </p>
+            </div>
+            <div class="interests-grid">
+              <div class="interest-item">
+                <span class="interest-icon"><i class="fas fa-cogs"></i></span>
+                <span>System Architecture</span>
+              </div>
+              <div class="interest-item">
+                <span class="interest-icon"><i class="fas fa-paint-brush"></i></span>
+                <span>UI/UX Design</span>
+              </div>
+              <div class="interest-item">
+                <span class="interest-icon"><i class="fas fa-chart-line"></i></span>
+                <span>Performance Optimization</span>
+              </div>
+              <div class="interest-item">
+                <span class="interest-icon"><i class="fas fa-shield-alt"></i></span>
+                <span>Security Best Practices</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Values -->
+        <div class="detail-card">
+          <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="card-content">
+            <div>
+              <h3>Core Values</h3>
+              <p>
+                My approach to development is guided by principles that ensure 
+                quality, maintainability, and positive impact.
+              </p>
+            </div>
+            <div class="values-list">
+              <div class="value-item">
+                <h4>Quality First</h4>
+                <p>Writing clean, testable, and maintainable code</p>
+              </div>
+              <div class="value-item">
+                <h4>User-Centric</h4>
+                <p>Focusing on user experience and accessibility</p>
+              </div>
+              <div class="value-item">
+                <h4>Continuous Growth</h4>
+                <p>Always learning and adapting to new technologies</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats-section">
+      <h2 class="stats-title">Quick Stats</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Learning</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Passion</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Let's Work Together</h2>
+        <p>Interested in collaborating or learning more about my work?</p>
+        <div class="cta-buttons">
+          <a routerLink="/projects" class="btn-primary">View Projects</a>
+          <a routerLink="/contact" class="btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

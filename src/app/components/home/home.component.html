@@ -1,0 +1,87 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Hi, I'm <span class="highlight">{{ personalInfo.name }}</span>
+        </h1>
+        <h2 class="hero-subtitle">{{ personalInfo.title }}</h2>
+        <p class="hero-description">{{ personalInfo.bio }}</p>
+        
+        <div class="hero-buttons">
+          <a routerLink="/projects" class="btn btn-primary">
+            View My Work
+          </a>
+          <a routerLink="/contact" class="btn btn-secondary">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="image-placeholder">
+          <div class="avatar-circle">
+            <img 
+              *ngIf="personalInfo.profileImage" 
+              [src]="personalInfo.profileImage" 
+              [alt]="personalInfo.name + ' Profile Photo'"
+              class="profile-image" />
+            <span 
+              *ngIf="!personalInfo.profileImage" 
+              class="avatar-text">{{ getInitials() }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+      <span class="scroll-text">Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- Quick Overview Section -->
+  <section class="overview-section">
+    <div class="container">
+      <div class="overview-content">
+        <div class="overview-item">
+          <div class="overview-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Frontend Development</h3>
+          <p>Creating beautiful and responsive user interfaces with modern frameworks</p>
+        </div>
+
+        <div class="overview-item">
+          <div class="overview-icon"><i class="fas fa-server"></i></div>
+          <h3>Backend Development</h3>
+          <p>Building scalable and efficient server-side applications and APIs</p>
+        </div>
+
+        <div class="overview-item">
+          <div class="overview-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Performance Focused</h3>
+          <p>Optimizing applications for speed, scalability, and user experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Technologies -->
+  <section class="tech-preview-section">
+    <div class="container">
+      <h2 class="section-title">Technologies I Love Working With</h2>
+      <div class="tech-grid">
+        <div class="tech-item" *ngFor="let tech of featuredTechnologies">
+          <div class="tech-icon" [style.background-color]="tech.color">
+            <i [class]="tech.icon"></i>
+          </div>
+          <span class="tech-name">{{ tech.name }}</span>
+        </div>
+      </div>
+      <div class="tech-cta">
+        <a routerLink="/skills" class="link-button">View All Skills →</a>
+      </div>
+    </div>
+  </section>
+</div>
