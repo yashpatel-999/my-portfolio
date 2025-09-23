@@ -28,7 +28,6 @@ export interface ContactInfo {
   github?: string;
   twitter?: string;
   location?: string;
-  resume?: string;
 }
 
 export interface PersonalInfo {

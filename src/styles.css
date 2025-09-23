@@ -22,7 +22,7 @@
 
 /* Dark Theme Colors */
 [data-theme="dark"] {
-  --bg-color: #000000;
+  --bg-color: #1e1c1c;
   --bg-secondary: #111111;
   --text-color: #ffffff;
   --text-secondary: #adb5bd;

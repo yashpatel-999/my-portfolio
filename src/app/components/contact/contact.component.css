@@ -3,35 +3,6 @@
   padding-top: 70px;
 }
 
-/* Ensure form visibility on smaller viewports */
-@media (max-height: 800px) {
-  .contact-hero {
-    padding: 1rem 0 0.5rem 0;
-  }
-  
-  .contact-title {
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .form-container {
-    padding: 1.5rem;
-  }
-  
-  .contact-form {
-    gap: 1rem;
-  }
-  
-  .form-textarea {
-    min-height: 80px;
-  }
-  
-  .faq-section {
-    margin-top: 2rem;
-    padding-top: 2rem;
-  }
-}
-
 .contact-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -41,7 +12,7 @@
 /* Hero Section */
 .contact-hero {
   text-align: center;
-  padding: 2rem 0 1.5rem 0;
+  padding: 4rem 0;
 }
 
 .contact-title {
@@ -76,7 +47,7 @@
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 3rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
@@ -89,14 +60,14 @@
 
 .form-description {
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   line-height: 1.6;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .form-group {
@@ -112,7 +83,7 @@
 }
 
 .form-input {
-  padding: 0.875rem;
+  padding: 1rem;
   border: 2px solid var(--border-color);
   border-radius: 12px;
   background: var(--bg-color);
@@ -134,7 +105,7 @@
 
 .form-textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
 }
 
 .form-select {
@@ -148,7 +119,7 @@
 }
 
 .submit-btn {
-  padding: 0.875rem 2rem;
+  padding: 1rem 2rem;
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   color: white;
   border: none;
@@ -157,7 +128,7 @@
   font-size: 1.125rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .submit-btn:hover:not(:disabled) {
@@ -178,24 +149,11 @@
 .submit-message {
   text-align: center;
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: 8px;
   font-weight: 500;
   background: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
-  margin-bottom: 0.5rem;
-  animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .submit-message.success {
@@ -368,15 +326,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .contact-container {
-    min-height: 100vh;
-    padding-top: 70px;
-  }
-
-  .contact-hero {
-    padding: 1.5rem 0 1rem 0;
-  }
-
   .contact-title {
     font-size: 2.5rem;
   }
@@ -388,24 +337,15 @@
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin-bottom: 2rem;
   }
 
   .form-container {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   .form-title,
   .info-title {
     font-size: 1.5rem;
-  }
-
-  .contact-form {
-    gap: 1rem;
-  }
-
-  .form-textarea {
-    min-height: 80px;
   }
 
   .faq-title {
@@ -415,11 +355,6 @@
   .faq-grid {
     grid-template-columns: 1fr;
   }
-
-  .faq-section {
-    margin-top: 2rem;
-    padding-top: 2rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -428,32 +363,15 @@
   }
 
   .contact-hero {
-    padding: 1rem 0 0.5rem 0;
+    padding: 2rem 0;
   }
 
   .contact-title {
     font-size: 2rem;
   }
 
-  .contact-subtitle {
-    font-size: 1rem;
-  }
-
   .form-container {
-    padding: 1.25rem;
-  }
-
-  .form-input {
-    padding: 0.75rem;
-  }
-
-  .form-textarea {
-    min-height: 70px;
-  }
-
-  .submit-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 1.5rem;
   }
 
   .contact-method {

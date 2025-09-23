@@ -23,13 +23,6 @@
             (ngSubmit)="onSubmit()"
             #contactForm="ngForm">
             
-            <div 
-              *ngIf="submitMessage()" 
-              class="submit-message"
-              [class.success]="submitSuccess()">
-              {{ submitMessage() }}
-            </div>
-            
             <div class="form-group">
               <label for="name" class="form-label">Name *</label>
               <input
@@ -98,6 +91,13 @@
               <span *ngIf="!isSubmitting()">Send Message</span>
               <span *ngIf="isSubmitting()">Sending...</span>
             </button>
+
+            <div 
+              *ngIf="submitMessage()" 
+              class="submit-message"
+              [class.success]="submitSuccess()">
+              {{ submitMessage() }}
+            </div>
           </form>
         </div>
       </section>
