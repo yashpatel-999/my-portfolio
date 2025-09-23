@@ -4,7 +4,6 @@ export interface FutureProject {
   description: string;
   icon: string;
   techStack: string[];
-  timeline: string;
   status: 'planned' | 'in-development' | 'research';
 }
 
@@ -24,7 +23,6 @@ export const FUTURE_PROJECTS: FutureProject[] = [
     description: 'Full-stack task management application with team collaboration features',
     icon: 'fas fa-tasks',
     techStack: ['Angular', 'Node.js', 'PostgreSQL'],
-    timeline: 'Q1 2025',
     status: 'in-development'
   },
   {
@@ -33,7 +31,6 @@ export const FUTURE_PROJECTS: FutureProject[] = [
     description: 'High-performance API gateway built with Rust for microservices',
     icon: 'fas fa-server',
     techStack: ['Rust', 'Docker', 'Redis'],
-    timeline: 'Q2 2025',
     status: 'planned'
   },
   {
@@ -42,7 +39,6 @@ export const FUTURE_PROJECTS: FutureProject[] = [
     description: 'Enhanced portfolio with 3D elements and interactive features',
     icon: 'fas fa-cube',
     techStack: ['Angular', 'Three.js', 'TypeScript'],
-    timeline: 'Q3 2025',
     status: 'research'
   }
 ];
