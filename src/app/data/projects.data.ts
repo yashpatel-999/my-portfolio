@@ -46,7 +46,7 @@ export const PROJECTS_DATA: Project[] = [
     category: 'Frontend',
     status: 'Completed',
     githubUrl: 'https://github.com/username/portfolio',
-    liveUrl: 'https://your-portfolio.vercel.app',
+    liveUrl: 'https://yashwanththota-portfolio.netlify.app/',
     featured: false,
     createdAt: '2024-06-01'
   },
