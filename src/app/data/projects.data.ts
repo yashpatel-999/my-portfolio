@@ -45,7 +45,7 @@ export const PROJECTS_DATA: Project[] = [
     techStack: ['Angular', 'TypeScript', 'CSS3', 'HTML5'],
     category: 'Frontend',
     status: 'Completed',
-    githubUrl: 'https://github.com/username/portfolio',
+    githubUrl: 'https://github.com/yashpatel-999/my-portfolio.git',
     liveUrl: 'https://yashwanththota-portfolio.netlify.app/',
     featured: false,
     createdAt: '2024-06-01'
