@@ -9,6 +9,7 @@ export const PERSONAL_INFO: PersonalInfo = {
     email: 'thotayash47@gmail.com',
     github: 'https://github.com/yashpatel-999',
     linkedin: 'https://www.linkedin.com/in/yashwanth-thotapatel/',
-    location: 'Hyderabad, India'
+    location: 'Hyderabad, India',
+    resume: 'https://drive.google.com/file/d/1FdNCoU4ZP2ixPECoP7BwgAu8rkgcIHP5/view?usp=drive_link'
   }
 };
