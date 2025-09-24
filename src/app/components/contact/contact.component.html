@@ -1,4 +1,19 @@
 <div class="contact-container">
+  <!-- Toast Notification -->
+  <div 
+    *ngIf="showToast()" 
+    class="toast-notification"
+    [class.success]="submitSuccess()"
+    [class.error]="!submitSuccess()">
+    <div class="toast-content">
+      <i [class]="submitSuccess() ? 'fas fa-check-circle' : 'fas fa-exclamation-circle'"></i>
+      <span>{{ submitMessage() }}</span>
+    </div>
+    <button class="toast-close" (click)="closeToast()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
   <div class="contact-content">
     <!-- Hero Section -->
     <section class="contact-hero">
@@ -91,13 +106,6 @@
               <span *ngIf="!isSubmitting()">Send Message</span>
               <span *ngIf="isSubmitting()">Sending...</span>
             </button>
-
-            <div 
-              *ngIf="submitMessage()" 
-              class="submit-message"
-              [class.success]="submitSuccess()">
-              {{ submitMessage() }}
-            </div>
           </form>
         </div>
       </section>

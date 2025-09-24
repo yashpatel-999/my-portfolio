@@ -3,6 +3,89 @@
   padding-top: 70px;
 }
 
+/* Toast Notification Styles */
+.toast-notification {
+  position: fixed;
+  top: 100px;
+  right: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1000;
+  min-width: 320px;
+  max-width: 400px;
+  animation: slideInRight 0.3s ease-out;
+  border-left: 4px solid;
+}
+
+.toast-notification.success {
+  border-left-color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+}
+
+.toast-notification.error {
+  border-left-color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.toast-content i {
+  font-size: 1.25rem;
+}
+
+.toast-notification.success .toast-content i {
+  color: #28a745;
+}
+
+.toast-notification.error .toast-content i {
+  color: #dc3545;
+}
+
+.toast-content span {
+  color: var(--text-color);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast-close:hover {
+  background: var(--border-color);
+  color: var(--text-color);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .contact-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -12,7 +95,7 @@
 /* Hero Section */
 .contact-hero {
   text-align: center;
-  padding: 4rem 0;
+  padding: 2rem 0 1.5rem 0;
 }
 
 .contact-title {
@@ -38,8 +121,8 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
+  gap: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* Contact Form */
@@ -47,7 +130,7 @@
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 3rem;
+  padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
@@ -60,14 +143,14 @@
 
 .form-description {
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .form-group {
@@ -326,6 +409,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .contact-hero {
+    padding: 1.5rem 0 1rem 0;
+  }
+
   .contact-title {
     font-size: 2.5rem;
   }
@@ -337,10 +424,15 @@
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .form-container {
-    padding: 2rem;
+    padding: 1.5rem;
+  }
+
+  .contact-form {
+    gap: 1rem;
   }
 
   .form-title,
@@ -355,6 +447,20 @@
   .faq-grid {
     grid-template-columns: 1fr;
   }
+
+  .faq-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  /* Toast responsive */
+  .toast-notification {
+    top: 90px;
+    right: 1rem;
+    left: 1rem;
+    min-width: auto;
+    max-width: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -363,15 +469,37 @@
   }
 
   .contact-hero {
-    padding: 2rem 0;
+    padding: 1rem 0 0.5rem 0;
   }
 
   .contact-title {
     font-size: 2rem;
   }
 
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+
   .form-container {
-    padding: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .contact-form {
+    gap: 0.875rem;
+  }
+
+  .form-input {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .form-textarea {
+    min-height: 80px;
+  }
+
+  .submit-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
   }
 
   .contact-method {
@@ -380,5 +508,34 @@
 
   .faq-item {
     padding: 1.5rem;
+  }
+}
+
+/* Compact viewport optimization */
+@media (max-height: 700px) {
+  .contact-hero {
+    padding: 1rem 0 0.5rem 0;
+  }
+  
+  .contact-title {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-container {
+    padding: 1.25rem;
+  }
+  
+  .contact-form {
+    gap: 0.875rem;
+  }
+  
+  .form-textarea {
+    min-height: 70px;
+  }
+  
+  .faq-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
   }
 }

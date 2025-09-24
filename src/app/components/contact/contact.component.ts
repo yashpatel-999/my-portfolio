@@ -36,6 +36,8 @@ export class ContactComponent {
   isSubmitting = signal(false);
   submitMessage = signal('');
   submitSuccess = signal(false);
+  showToast = signal(false);
+  private toastTimer: any;
 
   constructor(private http: HttpClient) {}
 
@@ -61,6 +63,7 @@ export class ContactComponent {
         this.isSubmitting.set(false);
         this.submitSuccess.set(true);
         this.submitMessage.set('Thank you for your message! I\'ll get back to you soon.');
+        this.showToastMessage();
         
         // Reset form with a slight delay to ensure proper reset
         setTimeout(() => {
@@ -72,6 +75,7 @@ export class ContactComponent {
         this.isSubmitting.set(false);
         this.submitSuccess.set(false);
         this.submitMessage.set('Sorry, there was an error sending your message. Please try again or email me directly.');
+        this.showToastMessage();
       }
     });
   }
@@ -101,6 +105,31 @@ export class ContactComponent {
     if (this.submitMessage()) {
       this.submitMessage.set('');
       this.submitSuccess.set(false);
+    }
+  }
+
+  showToastMessage(): void {
+    this.showToast.set(true);
+    
+    // Clear any existing timer
+    if (this.toastTimer) {
+      clearTimeout(this.toastTimer);
+    }
+    
+    // Auto-hide toast after 5 seconds
+    this.toastTimer = setTimeout(() => {
+      this.closeToast();
+    }, 5000);
+  }
+
+  closeToast(): void {
+    this.showToast.set(false);
+    this.submitMessage.set('');
+    this.submitSuccess.set(false);
+    
+    if (this.toastTimer) {
+      clearTimeout(this.toastTimer);
+      this.toastTimer = null;
     }
   }
 }
