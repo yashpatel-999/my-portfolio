@@ -39,7 +39,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "dist/portfolio"
-          output_location: ""
+          output_location: "dist/portfolio"
           skip_app_build: true
 
   close_pull_request_job:
