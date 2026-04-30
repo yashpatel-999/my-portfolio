@@ -1,10 +1,25 @@
-# Vercel Deployment Guide
+# Deployment Guides
+
+## Quick Deploy to Azure Static Web Apps (Recommended)
+
+For detailed instructions, see [AZURE_DEPLOYMENT.md](AZURE_DEPLOYMENT.md)
+
+**Quick Start:**
+
+1. Push code to GitHub
+2. Create Azure Static Web App in portal
+3. Connect GitHub repository
+4. Set build output to `dist/portfolio`
+5. GitHub Actions automatically deploys on push
+
+---
 
 ## Quick Deploy to Vercel
 
 ### Option 1: Deploy from GitHub (Recommended)
 
 1. **Push your code to GitHub**:
+
    ```bash
    git init
    git add .
@@ -23,6 +38,7 @@
 ### Option 2: Deploy with Vercel CLI
 
 1. **Install Vercel CLI**:
+
    ```bash
    npm i -g vercel
    ```
@@ -35,10 +51,12 @@
 ## Configuration Files
 
 ### vercel.json
+
 - Configures static build and SPA routing
 - Ensures all routes redirect to index.html for Angular Router
 
 ### angular.json
+
 - Updated CSS budget limits for production builds
 - FontAwesome configured in build assets
 
@@ -66,6 +84,7 @@ If you need to add environment variables on Vercel:
 ## Post-Deployment
 
 After deployment:
+
 1. Test all routes work correctly
 2. Verify contact form submits properly
 3. Check responsive design on mobile
@@ -75,6 +94,7 @@ After deployment:
 ## Domain Configuration
 
 To use a custom domain:
+
 1. Go to Vercel project settings
 2. Navigate to Domains
 3. Add your custom domain
